@@ -1,7 +1,7 @@
 const { Client, GatewayIntentBits, Collection, ActivityType } = require('discord.js');
 const fs = require('fs');
 const path = require('path');
-const config = require('./config.json');
+const config = require('../config.json');
 const client = new Client({
     intents: [
         GatewayIntentBits.Guilds,
@@ -16,8 +16,8 @@ client.commands = new Collection();
 const commandsPath = path.join(__dirname, 'commands');
 const commandFiles = fs.readdirSync(commandsPath).filter((file) => file.endsWith('.js'));
 
-const createCommand = require('./commands/create.js');
-const eventCommand = require('./commands/event.js');
+const createCommand = require('../commands/create.js');
+const eventCommand = require('../commands/event.js');
 
 client.commands.set(eventCommand.name, eventCommand);
 createCommand.setup(client);
@@ -28,7 +28,7 @@ for (const file of commandFiles) {
     client.commands.set(command.name, command);
 }
 
-const announcer = require('./commands/announce.js');
+const announcer = require('../commands/announce.js');
 
 client.once('ready', () => {
     console.log(`Logged in as ${client.user.tag}`);
