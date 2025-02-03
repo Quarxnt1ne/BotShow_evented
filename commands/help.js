@@ -9,9 +9,10 @@ module.exports = {
         const commands = [
             { name: `${prefix}help`, description: 'แสดงคำสั่งทั้งหมดของบอท' },
             { name: `${prefix}ping`, description: 'ตรวจสอบสถานะของบอท'},
-            { name: `${prefix}event`, description: 'สำหรับกิจกรรม'},
-            { name: `${prefix}tinetable`, description: 'สำหรับการเช็คตารางเรียน'},
-            { name: `${prefix}remove`, description: 'สำหรับการกิจกรรม'}
+            { name: `${prefix}create`, description: 'สำหรับการสร้างกิจกรรมใหม่'},
+            { name: `${prefix}event`, description: 'สำหรับดูกิจกรรม'},
+            { name: `${prefix}edit`, description: 'สำหรับการแก้ไขข้อมูลกิจกรรม'},
+            { name: `${prefix}remove`, description: 'สำหรับการลบกิจกรรม'}
         ];
 
         const embed = new EmbedBuilder()
